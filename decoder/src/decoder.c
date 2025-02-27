@@ -147,8 +147,10 @@ int is_subscribed(channel_id_t channel) {
     }
     // Check if the decoder has has a subscription
     for (int i = 0; i < MAX_CHANNEL_COUNT; i++) {
+	print_debug("" + decoder_status.subscribed_channels[i] + " = Channel ID is_subscribed");
         if (decoder_status.subscribed_channels[i].id == channel && decoder_status.subscribed_channels[i].active) {
             return 1;
+	
         }
     }
     return 0;
